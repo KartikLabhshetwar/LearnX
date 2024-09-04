@@ -5,15 +5,15 @@ const dotenv = require("dotenv")
 
 
 app.use(cors())
-const app = express();
-dotenv.config();
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+const app = express();
+dotenv.config();
 
 app.use("/api/v1", mainRoute)
 
+const port = process.env.PORT || 3000
 
-
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log("server is running....")
 })
